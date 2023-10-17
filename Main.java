@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         DecimalFormat format1 = new DecimalFormat("#.00");
 
-        FiguraGeometrica figura1 = null;
-        FiguraGeometrica figura2 = null;
-        FiguraGeometrica figura3 = null;
+        FiguraGeometrica figura1 = new Rectangulo("Rectangulo", 8, 9);
+        FiguraGeometrica figura2 = new Circulo("Circulo", 8);
+        FiguraGeometrica figura3 = new Triangulo("Triangulo", 10, 7);
 
         try {
             figura1 = new Circulo("Circulo", -1);
