@@ -1,0 +1,48 @@
+@startuml
+
+interface Calcula {
+    +calcularArea(): double
+    +calcularPerimetro(): double
+}
+
+abstract class FiguraGeometrica {
+    -nombre: String
+    +FiguraGeometrica(nombreFigura: String)
+    +getNombre(): String
+}
+
+class FiguraGenerica<T extends Calcula> {
+    -figura: T
+    +FiguraGenerica(figura: T)
+    +obtenerTipoFigura(): String
+    +mostrarCaracteristicas(): void
+}
+
+class Circulo {
+    -radio: double
+    +Circulo(nombreFigura: String, radio: double)
+    +calcularArea(): double
+    +calcularPerimetro(): double
+}
+
+class Rectangulo {
+    -base: double
+    -altura: double
+    +Rectangulo(nombreFigura: String, base: double, altura: double)
+    +calcularArea(): double
+    +calcularPerimetro(): double
+}
+
+class Triangulo {
+    -base: double
+    -altura: double
+    +Triangulo(nombreFigura: String, base: double, altura: double)
+    +calcularArea(): double
+    +calcularPerimetro(): double
+}
+
+FiguraGeometrica <|-- Circulo
+FiguraGeometrica <|-- Rectangulo
+FiguraGeometrica <|-- Triangulo
+
+@enduml
