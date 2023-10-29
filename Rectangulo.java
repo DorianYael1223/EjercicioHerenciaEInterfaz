@@ -11,12 +11,12 @@ class Rectangulo extends FiguraGeometrica {
     }
 
     @Override
-    public double CalcularArea() {
+    public double calcularArea() {
         return altura * base;
     }
 
     @Override
-    public double CalcularPerimetro() {
+    public double calcularPerimetro() {
         return 2 * (base + altura);
     }
 }

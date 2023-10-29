@@ -16,12 +16,12 @@ class Triangulo extends FiguraGeometrica {
     }
 
     @Override
-    public double CalcularArea() {
+    public double calcularArea() {
         return (base * altura) / 2;
     }
 
     @Override
-    public double CalcularPerimetro() {
+    public double calcularPerimetro() {
        return base + (2 * altura);
     }
 }
