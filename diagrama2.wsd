@@ -1,4 +1,4 @@
-@startuml Figura
+@startuml Figura 2 
 
 interface Calcula {
     +calcularArea(): double
@@ -7,15 +7,9 @@ interface Calcula {
 
 abstract class FiguraGeometrica {
     -nombre: String
-    +FiguraGeometrica(nombreFigura: String)
     +getNombre(): String
-}
-
-class FiguraGenerica<T extends Calcula> {
-    -figura: T
-    +FiguraGenerica(figura: T)
-    +obtenerTipoFigura(): String
-    +mostrarCaracteristicas(): void
+    +calcularArea(): double
+    +calcularPerimetro(): double
 }
 
 class Circulo {
@@ -41,8 +35,18 @@ class Triangulo {
     +calcularPerimetro(): double
 }
 
+class FiguraGenerica {
+    -figura: T
+    +obtenerTipoFigura(): String
+    +mostrarCaracteristicas(): void
+}
+
+FiguraGenerica --> Calcula
+
 FiguraGeometrica <|-- Circulo
 FiguraGeometrica <|-- Rectangulo
 FiguraGeometrica <|-- Triangulo
+
+FiguraGenerica --|> FiguraGeometrica
 
 @enduml
